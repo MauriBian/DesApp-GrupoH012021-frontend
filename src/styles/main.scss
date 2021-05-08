@@ -1,0 +1,43 @@
+@import '@/styles/common.scss';
+@import '@/styles/colors.scss';
+@import '@/styles/margin.scss';
+@import '@/styles/padding.scss';
+@import '@/styles/radius.scss';
+@import '@/styles/typography.scss';
+
+// Components styling
+@import '@/styles/buttons.scss';
+@import '@/styles/tooltip.scss';
+@import '@/styles/table.scss';
+@import '@/styles/forms.scss';
+@import '@/styles/cards.scss';
+@import '@/styles/texts.scss';
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  font-family: $font-family-secondary;
+  font-size: $font-size-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+
+  input,
+  button {
+    outline: 0;
+  }
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+}

@@ -1,0 +1,60 @@
+@use 'sass:math';
+
+$margin-default: 15px;
+
+// Margins were selected using the golden ratio
+$m-xs: $margin-default / math.pow($golden-ratio, 2);
+$m-sm: $margin-default / $golden-ratio;
+$m-rg: $margin-default;
+$m-md: $margin-default * math.pow($golden-ratio, 2);
+$m-lg: $margin-default * math.pow($golden-ratio, 3);
+$m-xl: $margin-default * math.pow($golden-ratio, 4);
+
+.m-xs { margin: $m-xs; }
+.m-sm { margin: $m-sm; }
+.m-rg { margin: $m-rg; }
+.m-md { margin: $m-md; }
+.m-lg { margin: $m-lg; }
+.m-xl { margin: $m-xl; }
+
+.mt-xs { margin-top: $m-xs; }
+.mt-sm { margin-top: $m-sm; }
+.mt-rg { margin-top: $m-rg; }
+.mt-md { margin-top: $m-md; }
+.mt-lg { margin-top: $m-lg; }
+.mt-xl { margin-top: $m-xl; }
+
+.mb-xs { margin-bottom: $m-xs; }
+.mb-sm { margin-bottom: $m-sm; }
+.mb-rg { margin-bottom: $m-rg; }
+.mb-md { margin-bottom: $m-md; }
+.mb-lg { margin-bottom: $m-lg; }
+.mb-xl { margin-bottom: $m-xl; }
+
+.ml-xs { margin-left: $m-xs; }
+.ml-sm { margin-left: $m-sm; }
+.ml-rg { margin-left: $m-rg; }
+.ml-md { margin-left: $m-md; }
+.ml-lg { margin-left: $m-lg; }
+.ml-xl { margin-left: $m-xl; }
+
+.mr-xs { margin-right: $m-xs; }
+.mr-sm { margin-right: $m-sm; }
+.mr-rg { margin-right: $m-rg; }
+.mr-md { margin-right: $m-md; }
+.mr-lg { margin-right: $m-lg; }
+.mr-xl { margin-right: $m-xl; }
+
+.mx-xs { margin-left: $m-xs; margin-right: $m-xs; }
+.mx-sm { margin-left: $m-sm; margin-right: $m-sm; }
+.mx-rg { margin-left: $m-rg; margin-right: $m-rg; }
+.mx-md { margin-left: $m-md; margin-right: $m-md; }
+.mx-lg { margin-left: $m-lg; margin-right: $m-lg; }
+.mx-xl { margin-left: $m-xl; margin-right: $m-xl; }
+
+.my-xs { margin-top: $m-xs; margin-bottom: $m-xs; }
+.my-sm { margin-top: $m-sm; margin-bottom: $m-sm; }
+.my-rg { margin-top: $m-rg; margin-bottom: $m-rg; }
+.my-md { margin-top: $m-md; margin-bottom: $m-md; }
+.my-lg { margin-top: $m-lg; margin-bottom: $m-lg; }
+.my-xl { margin-top: $m-xl; margin-bottom: $m-xl; }

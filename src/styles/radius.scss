@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+$border-radius: 4px;
+$radius-default: 10px;
+
+// paddings were selected using the golden ratio
+$r-xs: $radius-default / math.pow($golden-ratio, 2);
+$r-sm: $radius-default / $golden-ratio;
+$r-rg: $radius-default;
+$r-md: $radius-default * math.pow($golden-ratio, 2);
+$r-lg: $radius-default * math.pow($golden-ratio, 3);
+$r-xl: $radius-default * math.pow($golden-ratio, 4);
+
+.border-radius-xs { border-radius: $r-xs; }
+.border-radius-sm { border-radius: $r-sm; }
+.border-radius-rg { border-radius: $r-rg; }
+.border-radius-md { border-radius: $r-md; }
+.border-radius-lg { border-radius: $r-lg; }
+.border-radius-xl { border-radius: $r-xl; }

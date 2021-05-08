@@ -1258,6 +1258,13 @@
   dependencies:
     "@vue/cli-shared-utils" "^4.5.12"
 
+"@vue/cli-plugin-router@~4.5.0":
+  version "4.5.13"
+  resolved "https://registry.nlark.com/@vue/cli-plugin-router/download/@vue/cli-plugin-router-4.5.13.tgz#0b67c8898a2bf132941919a2a2e5f3aacbd9ffbe"
+  integrity sha1-C2fIiYor8TKUGRmiouXzqsvZ/74=
+  dependencies:
+    "@vue/cli-shared-utils" "^4.5.13"
+
 "@vue/cli-plugin-vuex@^4.5.12":
   version "4.5.12"
   resolved "https://registry.npm.taobao.org/@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.5.12.tgz?cache=0&sync_timestamp=1616590656418&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-vuex%2Fdownload%2F%40vue%2Fcli-plugin-vuex-4.5.12.tgz#f7fbe177ee7176f055b546e9e74472f9d9177626"
@@ -1330,6 +1337,24 @@
   version "4.5.12"
   resolved "https://registry.npm.taobao.org/@vue/cli-shared-utils/download/@vue/cli-shared-utils-4.5.12.tgz?cache=0&sync_timestamp=1616590660239&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-shared-utils%2Fdownload%2F%40vue%2Fcli-shared-utils-4.5.12.tgz#0e0693d488336d284ffa658ff33b1ea22927d065"
   integrity sha1-DgaT1IgzbShP+mWP8zseoikn0GU=
+  dependencies:
+    "@hapi/joi" "^15.0.1"
+    chalk "^2.4.2"
+    execa "^1.0.0"
+    launch-editor "^2.2.1"
+    lru-cache "^5.1.1"
+    node-ipc "^9.1.1"
+    open "^6.3.0"
+    ora "^3.4.0"
+    read-pkg "^5.1.1"
+    request "^2.88.2"
+    semver "^6.1.0"
+    strip-ansi "^6.0.0"
+
+"@vue/cli-shared-utils@^4.5.13":
+  version "4.5.13"
+  resolved "https://registry.nlark.com/@vue/cli-shared-utils/download/@vue/cli-shared-utils-4.5.13.tgz?cache=0&sync_timestamp=1620434287034&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcli-shared-utils%2Fdownload%2F%40vue%2Fcli-shared-utils-4.5.13.tgz#acd40f31b4790f1634292bdaa5fca95dc1e0ff50"
+  integrity sha1-rNQPMbR5DxY0KSvapfypXcHg/1A=
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.2"
@@ -8351,6 +8376,11 @@ vue-loader@^15.9.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-router@^4.0.0-0:
+  version "4.0.6"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.6.tgz?cache=0&sync_timestamp=1617697843139&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.6.tgz#91750db507d26642f225b0ec6064568e5fe448d6"
+  integrity sha1-kXUNtQfSZkLyJbDsYGRWjl/kSNY=
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.3"
