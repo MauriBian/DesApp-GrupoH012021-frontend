@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="api-key">JWT: {{jwt}}</h1>
+    <h1 class="api-key mt-md">ApiKey: {{apiKey}}</h1>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import jwt_decode from "jwt-decode";
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+  },
+  data () {
+    return {
+      jwt: '',
+      apiKey: ''
+    }
+  },
+
+  mounted () {
+    this.jwt = this.$route.params.jwt
+    this.apiKey = jwt_decode(this.jwt);
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.api-key {
+  font-size: 2rem;
+}
+</style>

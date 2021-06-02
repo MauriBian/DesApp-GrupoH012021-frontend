@@ -1,14 +1,8 @@
 <template>
 <div>
   <div class="login__container">
-    <div class="login-page__header px-md py-md">
-      <div class="login-page__header-right">
-        <span class="mr-sm">¿No tienes una cuenta?</span>
-        <router-link to="/signup" tag="button" class="btn btn-success-alt btn-rg btn-fit btn-sign-up">Regístrate</router-link>
-      </div>
-    </div>
     <div class="card-login card card-pad-rg card-login card-elevation-xl">
-      <h2 class="login__title mt-md">¡Bienvenido a Re-seña!</h2>
+      <h2 class="login__title mt-md">¡Registrate en Re-Seña!</h2>
       <div class="p-lg">
         <BaseFormInput
           id="login__username-input"
@@ -21,12 +15,18 @@
           type="text"
           v-model="password"
           label="Contraseña" />
+        <BaseFormInput
+          class="mt-md"
+          id="login__platform-name-input"
+          type="text"
+          v-model="platformName"
+          label="Nombre de la plataforma" />
           <div class="login__buttons">
             <button
-                type="submit"
-                class="btn btn-success btn-md mt-md mb-rg"
-                @click.prevent="submit">
-                <span>Iniciar sesión</span>
+              type="submit"
+              class="btn btn-success btn-md mt-md mb-rg"
+              @click.prevent="submit">
+              <span>Registrate</span>
             </button>
           </div>
       </div>
@@ -37,29 +37,31 @@
 
 <script>
 import BaseFormInput from '@/components/ui/BaseFormInput'
+import axios from 'axios'
 export default {
-  name: "Login",
+  name: "Register",
   components: {
     BaseFormInput
   },
   data() {
     return {
       username: '',
-      password: ''
+      password: '',
+      platformName: '',
     }
   },
-  computed: {
-  },
+  computed: {},
 
   methods: {
 
-    setValue (value) {
-      console.log(typeof value)
-      return 'dou'
-    },
-
     submit() {
-      alert(this.username + " " + this.password);
+      axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
+        username: this.username,
+        password: this.password,
+        platformName: this.platformName
+      }).then(response => {
+        this.$router.push({ name: 'Home', params: { jwt: response.data.apiKey }});
+      })
     },
   },
 }
@@ -67,10 +69,11 @@ export default {
 
 <style lang="scss" scoped>
 .login__container {
+  width: 100vw;
+  height: 100vh;
   background-image: $color-background-public;
   display: flex;
   flex-flow: column;
-  height: 100vh;
   box-shadow: 0 0 95px -38px rgba(59,25,119,.61);
   .card-login {
     width: 32%;
@@ -81,7 +84,7 @@ export default {
 
   .card-login {
     align-self: center;
-    margin-top: $m-xl;
+    margin-top: $m-xl + $m-lg;
   }
 
   .login-page__header {
