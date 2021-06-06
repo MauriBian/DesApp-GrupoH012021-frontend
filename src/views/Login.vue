@@ -2,31 +2,38 @@
 <div>
   <div class="login__container">
     <div class="login-page__header px-md py-md">
+      <div class="login-page__header-left">
+        <BaseFormSelect
+          class=""
+          v-model="$i18n.locale"
+          :options="languageOptions"
+          :label="$t('message.language')"/>
+      </div>
       <div class="login-page__header-right">
-        <span class="mr-sm">¿No tienes una cuenta?</span>
-        <router-link to="/signup" tag="button" class="btn btn-success-alt btn-rg btn-fit btn-sign-up">Regístrate</router-link>
+        <span class="mr-sm">{{$t("message.noAccount")}}</span>
+        <router-link to="/signup" tag="button" class="btn btn-success-alt btn-rg btn-fit btn-sign-up">{{$t("message.register")}}</router-link>
       </div>
     </div>
     <div class="card-login card card-pad-rg card-login card-elevation-xl">
-      <h2 class="login__title mt-md">¡Bienvenido a Re-seña!</h2>
+      <h2 class="login__title mt-md">{{$t("message.hello")}}</h2>
       <div class="p-lg">
         <BaseFormInput
           id="login__username-input"
           type="text"
           v-model="username"
-          label="Nombre de usuario" />
+          :label="$t('message.username')" />
         <BaseFormInput
           class="mt-md"
           id="login__password-input"
-          type="text"
+          type="password"
           v-model="password"
-          label="Contraseña" />
+          :label="$t('message.password')"/>
           <div class="login__buttons">
             <button
                 type="submit"
                 class="btn btn-success btn-md mt-md mb-rg"
                 @click.prevent="submit">
-                <span>Iniciar sesión</span>
+                <span>{{$t("message.login")}}</span>
             </button>
           </div>
       </div>
@@ -37,10 +44,12 @@
 
 <script>
 import BaseFormInput from '@/components/ui/BaseFormInput'
+import BaseFormSelect from '@/components/ui/BaseFormSelect'
 export default {
   name: "Login",
   components: {
-    BaseFormInput
+    BaseFormInput,
+    BaseFormSelect
   },
   data() {
     return {
@@ -49,6 +58,13 @@ export default {
     }
   },
   computed: {
+    languageOptions () {
+      return [
+      { label: 'English', code:'en' },
+      { label: 'Japanese', code: 'ja'},
+      { label: 'Spanish', code:'es' }
+      ]
+    } 
   },
 
   methods: {
@@ -94,6 +110,7 @@ export default {
 
       &.login-page__header-left {
         text-align: left;
+        max-width: 10%;
       }
 
       &.login-page__header-right {

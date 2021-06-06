@@ -2,30 +2,19 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueI18n from 'vue-i18n'
+import languages from './language/languages'
+import numbers from './language/numbersFormat'
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)
 
-const messages = {
-  en: {
-    message: {
-      hello: 'hello world'
-    }
-  },
-  ja: {
-    message: {
-      hello: 'こんにちは、世界'
-    }
-  },
-  es: {
-    message: {
-      hello: 'Hola mundo'
-    }
-  }
-}
+const messages = languages
+
+const numberFormats = numbers
 
 const i18n = new VueI18n({
   locale: 'es', // set locale
+  numberFormats,
   messages, // set locale messages
 })
 
