@@ -972,6 +972,11 @@
   resolved "https://registry.npm.taobao.org/@soda/get-current-script/download/@soda/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha1-pTUV2yXYA4N0OBtzryC7Ty5QjYc=
 
+"@sweetalert2/theme-bulma@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/theme-bulma/-/theme-bulma-5.0.0.tgz#c236f8720c6980037bc90dd8a6bc9f969cb44a58"
+  integrity sha512-zVt84Kf+DAwffhtCfyDimWDs2JcsGrt+RqzXrsMvMtYmXNbe5NQaSY679uznOWj28hoyJT+GBztqKTJMLcHM+Q==
+
 "@types/body-parser@*":
   version "1.19.0"
   resolved "https://registry.nlark.com/@types/body-parser/download/@types/body-parser-1.19.0.tgz?cache=0&sync_timestamp=1621240731440&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fbody-parser%2Fdownload%2F%40types%2Fbody-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
@@ -7659,6 +7664,11 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^11.0.16:
+  version "11.0.16"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.0.16.tgz#48b3b0420cb2431b906f627d54884f5c7a88d434"
+  integrity sha512-9XStCZJMQpLQBAT/jr/4qZuA5Xwoupi/x5FagZYM1qGnyRqYecaJTPD1Cb5gc7G+9B5muH/JaDaBQGrvLpCmvQ==
 
 table@^5.2.3:
   version "5.4.6"

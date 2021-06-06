@@ -1,14 +1,25 @@
 <template>
   <div class="app">
+      <BaseModal ref="baseModal" />
       <router-view/>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import BaseModal from '@/components/ui/BaseModal'
+export default {
+  components: {
+    BaseModal
+  },
+  mounted () {
+    Vue.prototype.$modal = this.$refs.baseModal
+  }
+}
 </script>
 
 <style lang="scss">
-
+@import '~@sweetalert2/theme-bulma/bulma.scss';
 body {
   margin: 0;
   padding: 0;

@@ -10,7 +10,11 @@ export default {
       login: 'Log in',
       registerHello: 'Sign up in Re-Seña!',
       platformName: 'Platform name',
-      only:'Only for'
+      only:'Only for',
+      incompleteForm: 'Incomplete form',
+      incompleteFormDescription: 'All fields are required, please complete them and try again',
+      userAlreadyExist: 'User already exists',
+      userAlreadyExistDescription: 'User already exists, please try a different one'
     }
   },
   ja: {
@@ -24,7 +28,11 @@ export default {
       login: 'ログイン',
       registerHello: '再署名にサインアップ！',
       platformName: 'プラットフォーム',
-      only: 'それだけに'
+      only: 'それだけに',
+      incompleteForm: '不完全なフォーム',
+      incompleteFormDescription: 'すべてのフィールドは必須です。入力して、もう一度やり直してください',
+      userAlreadyExist: 'このユーザーは既に存在します',
+      userAlreadyExistDescription: 'ユーザーは既に存在します。別のユーザーを試してください。'
     }
   },
   es: {
@@ -38,7 +46,11 @@ export default {
       login: 'Iniciar sesión',
       registerHello: '¡Registrate en Re-Seña!',
       platformName: 'Nombre de la plataforma',
-      only: 'Solamente por'
+      only: 'Solamente por',
+      incompleteForm: 'Formulario incompleto',
+      incompleteFormDescription: 'Todos los campos son obligatorios, por favor completarlos y volver a intentar',
+      userAlreadyExist: 'El usuario ya existe',
+      userAlreadyExistDescription: 'El usuario ya existe, por favor intentar con uno distinto'
     }
   }
 }

@@ -73,15 +73,35 @@ export default {
   },
 
   methods: {
-
+    
     submit() {
-      axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
-        username: this.username,
-        password: this.password,
-        platformName: this.platformName
-      }).then(response => {
-        this.$router.push({ name: 'Home', params: { jwt: response.data.apiKey }});
-      })
+      if (this.username && this.password && this.platformName) {
+        axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
+          username: this.username,
+          password: this.password,
+          platformName: this.platformName
+        }).then(response => {
+          this.$router.push({ name: 'Home', params: { jwt: response.data.apiKey }});
+        }).catch( response => {
+          console.log(response)
+          this.$modal.error({
+            title: this.$t("message.userAlreadyExist"), // 'Formulario incompleto',
+            text: this.$t("message.userAlreadyExistDescription"),
+            cancelButtonText: 'Cerrar',
+            showCancelButton: true,
+            showConfirmButton: false
+          })
+        })
+        } else {
+          this.$modal.error({
+            title: this.$t("message.incompleteForm"), // 'Formulario incompleto',
+            text: this.$t("message.incompleteFormDescription"),
+            cancelButtonText: 'Cerrar',
+            showCancelButton: true,
+            showConfirmButton: false
+          })
+      }
+
     },
   },
 }
@@ -104,7 +124,7 @@ export default {
 
   .card-register {
     align-self: center;
-    margin-top: $m-lg;
+    margin-top: $m-rg;
   }
 
   .register-page__header {

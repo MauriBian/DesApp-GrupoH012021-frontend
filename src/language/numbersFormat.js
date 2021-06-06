@@ -15,7 +15,7 @@ export default {
   'es': {
     currency: {
       style: 'currency',
-      currency: 'ARS',
+      currency: 'EUR',
     }
   }
 }

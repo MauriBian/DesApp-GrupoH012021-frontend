@@ -4,9 +4,11 @@ import router from './router'
 import VueI18n from 'vue-i18n'
 import languages from './language/languages'
 import numbers from './language/numbersFormat'
+import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 Vue.config.productionTip = false
 Vue.use(VueI18n)
+Vue.prototype.$swal = Swal
 
 const messages = languages
 
