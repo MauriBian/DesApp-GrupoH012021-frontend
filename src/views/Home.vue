@@ -19,9 +19,9 @@ export default {
     }
   },
 
-  mounted () {
-    this.jwt = this.$route.params.jwt
-    this.apiKey = jwt_decode(this.jwt);
+  async mounted () {
+    this.jwt = this.$store.getters.getJWT
+    this.apiKey = jwt_decode(this.jwt)
   }
 }
 </script>

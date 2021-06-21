@@ -48,7 +48,6 @@
 <script>
 import BaseFormInput from '@/components/ui/BaseFormInput'
 import BaseFormSelect from '@/components/ui/BaseFormSelect'
-import axios from 'axios'
 export default {
   name: "Register",
   components: {
@@ -74,34 +73,23 @@ export default {
 
   methods: {
     
-    submit() {
-      if (this.username && this.password && this.platformName) {
-        axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
-          username: this.username,
-          password: this.password,
-          platformName: this.platformName
-        }).then(response => {
-          this.$router.push({ name: 'Home', params: { jwt: response.data.apiKey }});
-        }).catch( response => {
-          console.log(response)
-          this.$modal.error({
+    async submit() {
+      const register = await this.$store.dispatch('register', {
+        username: this.username,
+        password: this.password,
+        platformName: this.platformName
+      })
+      if (register === 'Error') {
+         this.$modal.error({
             title: this.$t("message.userAlreadyExist"), // 'Formulario incompleto',
             text: this.$t("message.userAlreadyExistDescription"),
             cancelButtonText: 'Cerrar',
             showCancelButton: true,
             showConfirmButton: false
           })
-        })
-        } else {
-          this.$modal.error({
-            title: this.$t("message.incompleteForm"), // 'Formulario incompleto',
-            text: this.$t("message.incompleteFormDescription"),
-            cancelButtonText: 'Cerrar',
-            showCancelButton: true,
-            showConfirmButton: false
-          })
+      } else {
+        this.$router.push({ name: 'Home'})
       }
-
     },
   },
 }

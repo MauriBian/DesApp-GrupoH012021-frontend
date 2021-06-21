@@ -68,14 +68,21 @@ export default {
   },
 
   methods: {
-
-    setValue (value) {
-      console.log(typeof value)
-      return 'dou'
-    },
-
-    submit() {
-      alert(this.username + " " + this.password);
+    async submit() {
+      const response = await this.$store.dispatch('login', {
+        username: this.username,
+        password: this.password
+      })
+      if (!response) {
+        this.$modal.error({
+          title: this.$t("message.wrongUser"), // 'Formulario incompleto',
+          cancelButtonText: 'Cerrar',
+          showCancelButton: true,
+          showConfirmButton: false
+        })
+      } else {
+        this.$router.push({ name: 'Home'})
+      }
     },
   },
 }

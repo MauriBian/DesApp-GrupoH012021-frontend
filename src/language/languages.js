@@ -14,7 +14,8 @@ export default {
       incompleteForm: 'Incomplete form',
       incompleteFormDescription: 'All fields are required, please complete them and try again',
       userAlreadyExist: 'User already exists',
-      userAlreadyExistDescription: 'User already exists, please try a different one'
+      userAlreadyExistDescription: 'User already exists, please try a different one',
+      wrongUser: 'Wrong username or password'
     }
   },
   ja: {
@@ -32,7 +33,8 @@ export default {
       incompleteForm: '不完全なフォーム',
       incompleteFormDescription: 'すべてのフィールドは必須です。入力して、もう一度やり直してください',
       userAlreadyExist: 'このユーザーは既に存在します',
-      userAlreadyExistDescription: 'ユーザーは既に存在します。別のユーザーを試してください。'
+      userAlreadyExistDescription: 'ユーザーは既に存在します。別のユーザーを試してください。',
+      wrongUser: 'ユーザー名またはパスワードが間違っています'
     }
   },
   es: {
@@ -50,7 +52,8 @@ export default {
       incompleteForm: 'Formulario incompleto',
       incompleteFormDescription: 'Todos los campos son obligatorios, por favor completarlos y volver a intentar',
       userAlreadyExist: 'El usuario ya existe',
-      userAlreadyExistDescription: 'El usuario ya existe, por favor intentar con uno distinto'
+      userAlreadyExistDescription: 'El usuario ya existe, por favor intentar con uno distinto',
+      wrongUser: 'Usuario o contraseña incorrecta'
     }
   }
 }
