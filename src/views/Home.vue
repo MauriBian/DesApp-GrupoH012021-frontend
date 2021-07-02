@@ -43,7 +43,18 @@ export default {
 
   async mounted () {
     this.jwt = this.$store.getters.getJWT
-    this.platformUsage = await this.$store.dispatch('platformUsage')
+    const result = await this.$store.dispatch('platformUsage')
+    if (result === 'Error'){
+      this.$modal.error({
+          title: this.$t("message.wrongApiKey"), // 'Formulario incompleto',
+          text:this.$t("message.wrongApiKeyDescription"),
+          cancelButtonText: 'Cerrar',
+          showCancelButton: true,
+          showConfirmButton: false
+        })
+    } else {
+      this.platformUsage = result
+    }
 
   }
 }

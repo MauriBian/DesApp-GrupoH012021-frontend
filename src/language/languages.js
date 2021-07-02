@@ -20,7 +20,9 @@ export default {
       subscribeMessage: 'Subscribe to receive notifications',
       subscribe: 'Subscribe',
       action: 'Action',
-      platform: 'Platform'
+      platform: 'Platform',
+      wrongApiKey: 'Wrong api key',
+      wrongApiKeyDescription: 'The api key is wrong. Please try again'
     }
   },
   ja: {
@@ -44,7 +46,9 @@ export default {
       subscribeMessage: '通知を受け取るためにサブスクライブする',
       subscribe: '申し込む',
       action: 'アクション',
-      platform: '申し込む'
+      platform: '申し込む',
+      wrongApiKey: '間違ったAPIキー',
+      wrongApiKeyDescription: 'APIキーが間違っています。もう一度やり直してください'
     }
   },
   es: {
@@ -68,7 +72,9 @@ export default {
       subscribeMessage: 'Suscribete para recibir notificaciones',
       subscribe: 'Suscribite',
       action: 'Acción',
-      platform: 'Plataforma'
+      platform: 'Plataforma',
+      wrongApiKey: 'Api key incorrecta',
+      wrongApiKeyDescription: 'La api key es incorrecta. Por favor vuelta a intentarlo'
     }
   }
 }
