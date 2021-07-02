@@ -88,7 +88,7 @@ export default {
             showConfirmButton: false
           })
       } else {
-        this.$router.push({ name: 'Home'})
+        this.$router.push({ name: 'ApiKey'})
       }
     },
   },

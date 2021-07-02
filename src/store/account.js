@@ -2,43 +2,56 @@ import axios from 'axios'
 
 export default {
   state: {
-    jwt: null
+    jwt: null,
+    username: null
   },
 
   mutations: {
+    setUserInfo (state, payload) {
+      state.jwt = payload.jwt
+      state.username = payload.username
+    }
   },
   actions: {
     async register ({ state }, { username, password, platformName }) {
-  
-      const result = axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
-        username,
-        password,
-        platformName
-      }).then(response => {
-        state.jwt = response.data.apiKey
-        console.log(state)
-        return response.data.apiKey
-      })
-      .catch(response => {
-        console.log(response)
+
+      try {
+        const result = await axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
+          username,
+          password,
+          platformName
+        })
+        state.jwt = result.data.apiKey
+        return result.data.apiKey  
+      } catch (error) {
         return 'Error'
-      })
-      return result
+      }
+    },
+
+    async platformUsage ({ state }) {
+      try {
+        const result = await axios.get('https://frozen-garden-00911.herokuapp.com/api/platformusage?platformname=' + state.username, {
+          headers: {
+            'Api-key': state.jwt
+          }
+        })
+        return result.data
+      } catch {
+        return 'Error'
+      }
 
     },
 
     async login (state , { username, password }) {
-      const result = await axios.post('https://frozen-garden-00911.herokuapp.com/login', {
+      try {
+        const result = await axios.post('https://frozen-garden-00911.herokuapp.com/login', {
         username,
         password
-      }).then(response => response.status)
-      .catch(response => {
-        console.log(response)
-        return
       })
-
       return result
-
+      } catch {
+        return
+      }
     }
   },
   getters: {

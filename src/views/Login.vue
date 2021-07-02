@@ -28,6 +28,12 @@
           type="password"
           v-model="password"
           :label="$t('message.password')"/>
+          <BaseFormInput
+          class="mt-md"
+          id="login__api-key-input"
+          type="text"
+          v-model="apiKey"
+          label="Api key" />
           <div class="login__buttons">
             <button
                 type="submit"
@@ -54,7 +60,8 @@ export default {
   data() {
     return {
       username: '',
-      password: ''
+      password: '',
+      apiKey: ''
     }
   },
   computed: {
@@ -81,6 +88,7 @@ export default {
           showConfirmButton: false
         })
       } else {
+        this.$store.commit('setUserInfo', { username: this.username, jwt: this.apiKey })
         this.$router.push({ name: 'Home'})
       }
     },
@@ -104,7 +112,7 @@ export default {
 
   .card-login {
     align-self: center;
-    margin-top: $m-xl;
+    margin-top: $m-md;
   }
 
   .login-page__header {

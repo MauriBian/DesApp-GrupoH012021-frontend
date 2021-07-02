@@ -22,7 +22,6 @@ $color-background-200: #f9f8fd;
 $color-background-300: #f5f6fa;
 $color-background-400: #f0f3fa;
 $color-background-500: #edf0f7;
-$color-background: $color-background-400;
 
 /*  Material Design color palette (full) downloaded from
  *  http://htmlcolorcodes.com/color-charts/
@@ -388,3 +387,4 @@ $color-danger-dark: rgb(223, 69, 69);
 $color-background-public: linear-gradient(to bottom, rgba($color-light-green-a200, 0.05), rgba($color-light-green-a200, 0.1), rgba($color-success, 0.2), rgba($color-success, 0.50));
 $color-splash-background: linear-gradient(to bottom, rgba($color-blue-light, 0.05), rgba($color-blue-light, 0.1), rgba($color-primary, 0.15), rgba($color-primary, 0.20));
 $color-splash-logo: $color-primary-500;
+$color-background: $color-green-50;
