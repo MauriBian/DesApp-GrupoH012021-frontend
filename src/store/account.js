@@ -16,7 +16,7 @@ export default {
     async register ({ state }, { username, password, platformName }) {
 
       try {
-        const result = await axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
+        const result = await axios.post('http://localhost:8080/api/clientplatforms', {
           username,
           password,
           platformName
@@ -28,9 +28,27 @@ export default {
       }
     },
 
+    async subscribe ({ state }, { selectedMovie, url }) {
+
+      try {
+        const result = await axios.post('http://localhost:8080/api/platformcontents/subscribe', {
+          contentImdbId: selectedMovie,
+          username: state.username,
+          url: url
+        }, {
+          headers: {
+            'Api-key': state.jwt
+          }
+        })
+        return result
+      } catch (error) {
+        return 'Error'
+      }
+    },
+
     async platformUsage ({ state }) {
       try {
-        const result = await axios.get('https://frozen-garden-00911.herokuapp.com/api/platformusage?platformname=' + state.username, {
+        const result = await axios.get('http://localhost:8080/api/platformusage?platformname=' + state.username, {
           headers: {
             'Api-key': state.jwt
           }
@@ -44,7 +62,7 @@ export default {
 
     async login (state , { username, password }) {
       try {
-        const result = await axios.post('https://frozen-garden-00911.herokuapp.com/login', {
+        const result = await axios.post('http://localhost:8080/login', {
         username,
         password
       })

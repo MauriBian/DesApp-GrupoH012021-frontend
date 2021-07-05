@@ -22,7 +22,11 @@ export default {
       action: 'Action',
       platform: 'Platform',
       wrongApiKey: 'Wrong api key',
-      wrongApiKeyDescription: 'The api key is wrong. Please try again'
+      wrongApiKeyDescription: 'The api key is wrong. Please try again',
+      subscribeModalTitle: 'Subscribe to a movie or series',
+      subscribeModalText:'Subscribe to receive information about user reviews',
+      cancel: 'Cancel',
+      labelSelector: 'Movie / Series / Episode'
     }
   },
   ja: {
@@ -48,7 +52,11 @@ export default {
       action: 'アクション',
       platform: '申し込む',
       wrongApiKey: '間違ったAPIキー',
-      wrongApiKeyDescription: 'APIキーが間違っています。もう一度やり直してください'
+      wrongApiKeyDescription: 'APIキーが間違っています。もう一度やり直してください',
+      subscribeModalTitle: '映画やシリーズを購読する',
+      subscribeModalText: 'ユーザーレビューに関する情報を受け取るために購読する',
+      cancel: 'キャンセル',
+      labelSelector: '映画/シリーズ/エピソード'
     }
   },
   es: {
@@ -74,7 +82,11 @@ export default {
       action: 'Acción',
       platform: 'Plataforma',
       wrongApiKey: 'Api key incorrecta',
-      wrongApiKeyDescription: 'La api key es incorrecta. Por favor vuelta a intentarlo'
+      wrongApiKeyDescription: 'La api key es incorrecta. Por favor vuelta a intentarlo',
+      subscribeModalTitle: 'Suscribirse a una película o serie',
+      subscribeModalText:'Suscribete para recibir informacion sobre las reseñas de los usuarios',
+      cancel: 'Cancelar',
+      labelSelector: 'Pelicula / Serie / Episodio'
     }
   }
 }

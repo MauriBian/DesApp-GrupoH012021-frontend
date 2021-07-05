@@ -3,7 +3,7 @@
     <div class="home-page__header px-md py-md">
       <div class="home-page__header-right">
         <span class="mr-sm">{{$t("message.subscribeMessage")}}</span>
-        <router-link to="/signup" tag="button" class="btn btn-success-alt btn-rg btn-fit btn-sign-up">{{$t("message.subscribe")}}</router-link>
+        <button @click="subscribe" tag="button" class="btn btn-success-alt btn-rg btn-fit btn-sign-up">{{$t("message.subscribe")}}</button>
       </div>
     </div>
       <h1 class=""> {{$t("message.platformUsage")}} </h1>
@@ -25,14 +25,17 @@
       </tbody>
     </table>
     </div>
+    <SubscriptionSidePanel ref="sidePanel"></SubscriptionSidePanel>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import SubscriptionSidePanel from '@/components/SubscriptionSidePanel.vue'
 export default {
   name: 'Home',
   components: {
+    SubscriptionSidePanel
   },
   data () {
     return {
@@ -41,11 +44,18 @@ export default {
     }
   },
 
+  methods: {
+
+  async subscribe () {
+    this.$refs.sidePanel.open()
+  }
+
+  },
   async mounted () {
     this.jwt = this.$store.getters.getJWT
     const result = await this.$store.dispatch('platformUsage')
     if (result === 'Error'){
-      this.$modal.error({
+      this.$modal.info({
           title: this.$t("message.wrongApiKey"), // 'Formulario incompleto',
           text:this.$t("message.wrongApiKeyDescription"),
           cancelButtonText: 'Cerrar',
