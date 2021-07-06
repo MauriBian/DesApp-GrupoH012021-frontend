@@ -31,7 +31,7 @@ export default {
     async subscribe ({ state }, { selectedMovie, url }) {
 
       try {
-        const result = await axios.post('http://localhost:8080/api/platformcontents/subscribe', {
+        const result = await axios.post('http://localhost:8080/api/subscribe/platformcontent', {
           contentImdbId: selectedMovie,
           username: state.username,
           url: url
