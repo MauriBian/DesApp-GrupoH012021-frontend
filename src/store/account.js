@@ -3,20 +3,24 @@ import axios from 'axios'
 export default {
   state: {
     jwt: null,
-    username: null
+    username: null,
+    platformUsage: []
   },
 
   mutations: {
-    setUserInfo (state, payload) {
-      state.jwt = payload.jwt
+    setUsername (state, payload) {
       state.username = payload.username
+    },
+
+    setJWT(state, payload) {
+      state.jwt = payload.jwt
     }
   },
   actions: {
     async register ({ state }, { username, password, platformName }) {
 
       try {
-        const result = await axios.post('http://localhost:8080/api/clientplatforms', {
+        const result = await axios.post('https://frozen-garden-00911.herokuapp.com/api/clientplatforms', {
           username,
           password,
           platformName
@@ -31,7 +35,7 @@ export default {
     async subscribe ({ state }, { selectedMovie, url }) {
 
       try {
-        const result = await axios.post('http://localhost:8080/api/subscribe/platformcontent', {
+        const result = await axios.post('https://frozen-garden-00911.herokuapp.com/api/subscribe/platformcontent', {
           contentImdbId: selectedMovie,
           username: state.username,
           url: url
@@ -48,11 +52,12 @@ export default {
 
     async platformUsage ({ state }) {
       try {
-        const result = await axios.get('http://localhost:8080/api/platformusage?platformname=' + state.username, {
+        const result = await axios.get('https://frozen-garden-00911.herokuapp.com/api/platformusage?platformname=' + state.username, {
           headers: {
             'Api-key': state.jwt
           }
         })
+        state.platformUsage = result.data
         return result.data
       } catch {
         return 'Error'
@@ -62,7 +67,7 @@ export default {
 
     async login (state , { username, password }) {
       try {
-        const result = await axios.post('http://localhost:8080/login', {
+        const result = await axios.post('https://frozen-garden-00911.herokuapp.com/login', {
         username,
         password
       })
@@ -75,6 +80,14 @@ export default {
   getters: {
     getJWT: state => {
       return state.jwt
+    },
+
+    getPlatformUsage: state => {
+      return state.platformUsage
+    },
+
+    getUserInfo: state => {
+      return state.username
     }
   }
 }

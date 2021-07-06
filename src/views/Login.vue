@@ -4,7 +4,7 @@
     <div class="login-page__header px-md py-md">
       <div class="login-page__header-left">
         <BaseFormSelect
-          class=""
+          class="leng-select"
           v-model="$i18n.locale"
           :options="languageOptions"
           :label="$t('message.language')"/>
@@ -28,12 +28,6 @@
           type="password"
           v-model="password"
           :label="$t('message.password')"/>
-          <BaseFormInput
-          class="mt-md"
-          id="login__api-key-input"
-          type="text"
-          v-model="apiKey"
-          label="Api key" />
           <div class="login__buttons">
             <button
                 type="submit"
@@ -60,8 +54,7 @@ export default {
   data() {
     return {
       username: '',
-      password: '',
-      apiKey: ''
+      password: ''
     }
   },
   computed: {
@@ -88,7 +81,7 @@ export default {
           showConfirmButton: false
         })
       } else {
-        this.$store.commit('setUserInfo', { username: this.username, jwt: this.apiKey })
+        this.$store.commit('setUsername', { username: this.username })
         this.$router.push({ name: 'Home'})
       }
     },
@@ -112,7 +105,6 @@ export default {
 
   .card-login {
     align-self: center;
-    margin-top: $m-md;
   }
 
   .login-page__header {
@@ -120,12 +112,16 @@ export default {
     align-items: right;
     font-family: $font-family-primary;
 
+    .leng-select{
+      width: 100%;
+    }
+
     & > div {
       flex: 1;
 
       &.login-page__header-left {
         text-align: left;
-        max-width: 10%;
+        max-width: 15%;
       }
 
       &.login-page__header-right {

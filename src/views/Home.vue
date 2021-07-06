@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <div class="home-page__header px-md py-md">
+      <div class="home-page__header-left">
+        <button @click="loadJWT" tag="button" class="btn btn-success-alt btn-rg btn-fit btn-sign-up">{{$t("message.loadApiKey")}}</button>
+      </div>
       <div class="home-page__header-right">
         <span class="mr-sm">{{$t("message.subscribeMessage")}}</span>
         <button @click="subscribe" tag="button" class="btn btn-success-alt btn-rg btn-fit btn-sign-up">{{$t("message.subscribe")}}</button>
@@ -26,21 +29,28 @@
     </table>
     </div>
     <SubscriptionSidePanel ref="sidePanel"></SubscriptionSidePanel>
+    <JWTSidePanel ref="jwtSidePanel"></JWTSidePanel>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import SubscriptionSidePanel from '@/components/SubscriptionSidePanel.vue'
+import JWTSidePanel from '@/components/JWTSidePanel.vue'
 export default {
   name: 'Home',
   components: {
-    SubscriptionSidePanel
+    SubscriptionSidePanel,
+    JWTSidePanel
   },
   data () {
     return {
-      jwt: '',
-      platformUsage: []
+    }
+  },
+
+  computed: {
+    platformUsage () {
+      return this.$store.getters.getPlatformUsage
     }
   },
 
@@ -48,24 +58,14 @@ export default {
 
   async subscribe () {
     this.$refs.sidePanel.open()
+  },
+
+  async loadJWT () {
+    this.$refs.jwtSidePanel.open()
   }
 
   },
   async mounted () {
-    this.jwt = this.$store.getters.getJWT
-    const result = await this.$store.dispatch('platformUsage')
-    if (result === 'Error'){
-      this.$modal.info({
-          title: this.$t("message.wrongApiKey"), // 'Formulario incompleto',
-          text:this.$t("message.wrongApiKeyDescription"),
-          cancelButtonText: 'Cerrar',
-          showCancelButton: true,
-          showConfirmButton: false
-        })
-    } else {
-      this.platformUsage = result
-    }
-
   }
 }
 </script>
@@ -82,7 +82,25 @@ export default {
 
       &.home-page__header-left {
         text-align: left;
-        max-width: 10%;
+        max-width: 15%;
+
+        span {
+          font-size: 0.85rem;
+          font-weight: 400;
+        }
+
+        .btn-sign-up {
+          -webkit-box-shadow: 0 5px 15px rgba($color-shadow, 0.25);
+          -moz-box-shadow: 0 5px 15px rgba($color-shadow, 0.25);
+          box-shadow: 0 5px 15px rgba($color-shadow, 0.25);
+
+          &:hover {
+            transform: scale(1.1);
+            -webkit-box-shadow: 0 5px 18px rgba($color-shadow, 0.15);
+            -moz-box-shadow: 0 5px 18px rgba($color-shadow, 0.15);
+            box-shadow: 0 5px 18px rgba($color-shadow, 0.15);
+          }
+        }
       }
 
       &.home-page__header-right {

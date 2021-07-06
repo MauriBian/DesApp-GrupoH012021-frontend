@@ -26,7 +26,10 @@ export default {
       subscribeModalTitle: 'Subscribe to a movie or series',
       subscribeModalText:'Subscribe to receive information about user reviews',
       cancel: 'Cancel',
-      labelSelector: 'Movie / Series / Episode'
+      labelSelector: 'Movie / Series / Episode',
+      loadApiKey: 'Load api key',
+      load: 'Load'
+
     }
   },
   ja: {
@@ -56,7 +59,9 @@ export default {
       subscribeModalTitle: '映画やシリーズを購読する',
       subscribeModalText: 'ユーザーレビューに関する情報を受け取るために購読する',
       cancel: 'キャンセル',
-      labelSelector: '映画/シリーズ/エピソード'
+      labelSelector: '映画/シリーズ/エピソード',
+      loadApiKey: 'APIキーをロードします',
+      load: '負荷'
     }
   },
   es: {
@@ -86,7 +91,9 @@ export default {
       subscribeModalTitle: 'Suscribirse a una película o serie',
       subscribeModalText:'Suscribete para recibir informacion sobre las reseñas de los usuarios',
       cancel: 'Cancelar',
-      labelSelector: 'Pelicula / Serie / Episodio'
+      labelSelector: 'Pelicula / Serie / Episodio',
+      loadApiKey: 'Cargar api key',
+      load: 'Cargar'
     }
   }
 }

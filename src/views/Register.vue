@@ -112,7 +112,6 @@ export default {
 
   .card-register {
     align-self: center;
-    margin-top: $m-rg;
   }
 
   .register-page__header {
@@ -125,7 +124,7 @@ export default {
 
       &.register-page__header-left {
         text-align: left;
-        max-width: 10%;
+        max-width: 15%;
       }
 
       &.register-page__header-right {
